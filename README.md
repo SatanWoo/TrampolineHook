@@ -1,6 +1,11 @@
 # TrampolineHook
 **A solution for centralized method redirection.**
 
+You can read articles about underlying implementation of this project.
+
+1. [基于桥的全量方法Hook方案 - 探究苹果主线程检查实现](http://satanwoo.github.io/2017/09/24/mainthreadchecker1/)
+2. [基于桥的全量方法 Hook 方案（2） - 全新升级](http://satanwoo.github.io/2020/04/22/NewBridgeHook/)
+3. [基于桥的全量方法 Hook 方案（3）- 开源 TrampolineHook](http://satanwoo.github.io/2020/04/26/TrampolineHookOpenSource/)
 
 
 ## 1. Usage
