@@ -1,9 +1,9 @@
 # TrampolineHook
-A solution for centralized method redirection. 
+** A solution for centralized method redirection. **
 
 
 
-#### 1. Usage
+## 1. Usage
 
 The interface of TrampolineHook is very very simple. Only two steps are required.
 
@@ -36,7 +36,7 @@ result.state == THInterceptStateSuccess
 
 
 
-#### 2. How to debug
+## 2. How to debug
 
 The debug of interception is not very easy. 
 
@@ -44,7 +44,7 @@ The debug of interception is not very easy.
 
 
 
-#### 3. Example
+## 3. Example
 There is one typical example associated with this open source project called **MainThreadChecker**。It is the rewritten version of the implementation in **Apple libMainThreadChecker.dylib**
 
 It is almost the same as the one of Apple based on my own reverse engineering. **No Private APIs used.** 
@@ -60,7 +60,7 @@ The usage of MainThreadChecker is quite easy.
 
 
 
-#### 4. TODO
+## 4. TODO
 - [] API Stability.
 - [] Varadic Argument Interceptor.
 - [] More examples.
