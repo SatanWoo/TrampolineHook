@@ -43,8 +43,6 @@ result.state == THInterceptStateSuccess
 The debug of interception is not very easy. 
 
 **Remember always use the `result.replacedAddress` returned from `interceptFunction` for breakpoint.**
-**Remember always use the `result.replacedAddress` returned from `interceptFunction` for breakpoint.**  
-**Remember always use the `result.replacedAddress` returned from `interceptFunction` for breakpoint.**  
 
 
 
