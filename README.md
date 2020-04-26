@@ -1,5 +1,5 @@
 # TrampolineHook
-** A solution for centralized method redirection. **
+**A solution for centralized method redirection.**
 
 
 
@@ -65,3 +65,19 @@ The usage of MainThreadChecker is quite easy.
 - [] Varadic Argument Interceptor.
 - [] More examples.
 - [] Performance Benchmark.
+
+
+
+## 5.Reference
+
+The great works listed below inspired me a lot during the development of **TrampolineHook**.
+
+- [Dobby](https://github.com/jmpews/Dobby) @jmpews
+
+
+
+## 6. License
+
+Copyright 2020 @SatanWoo
+
+Checkout [License](https://github.com/SatanWoo/TrampolineHook/blob/master/LICENSE)
