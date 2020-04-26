@@ -3,14 +3,12 @@
 .text
 .align 14
 .globl _th_dynamic_page
-.globl _th_dynamic_stret_page
 
 interceptor:
 .quad 0
 
 .align 14
 _th_dynamic_page:
-_th_dynamic_stret_page:
 
 _th_entry:
 
