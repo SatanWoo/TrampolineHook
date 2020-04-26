@@ -61,10 +61,11 @@ The usage of MainThreadChecker is quite easy.
 
 
 ## 4. TODO
-- [] API Stability.
-- [] Varadic Argument Interceptor.
-- [] More examples.
-- [] Performance Benchmark.
+
+- [ ] API Stability. 
+- [ ] Varadic Argument Interceptor.
+- [ ] More examples.
+- [ ] Performance Benchmark.
 
 
 
@@ -73,6 +74,7 @@ The usage of MainThreadChecker is quite easy.
 The great works listed below inspired me a lot during the development of **TrampolineHook**.
 
 - [Dobby](https://github.com/jmpews/Dobby) @jmpews
+
 
 
 
