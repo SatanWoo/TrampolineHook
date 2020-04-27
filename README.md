@@ -23,12 +23,6 @@ void myInterceptor
     // bla bla bla
 }
 
-// Objective-C Format
-- (void)myIntercetpr_OC
-{
-    // bla bla bla
-}
-
 // Create the global inteceptor with your function
 THInterceptor *interceptor = [THInterceptor sharedInterceptorWithFunction:(IMP)myInterceptor]
 ```
