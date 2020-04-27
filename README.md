@@ -15,8 +15,16 @@ The interface of TrampolineHook is very very simple. Only two steps are required
 1. Create the global interceptor with your centralized function as follows:
 
 ```
-// Suppose you have a function defined as
-- (void)myInterceptor:(void)
+// Suppose you have  function defined as
+
+// C Format
+void myInterceptor
+{
+    // bla bla bla
+}
+
+// Objective-C Format
+- (void)myIntercetpr_OC
 {
     // bla bla bla
 }
