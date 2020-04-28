@@ -28,6 +28,7 @@ typedef NS_ENUM(NSUInteger, THInterceptState) {
 
 + (THInterceptor *)sharedInterceptorWithFunction:(IMP)redirectFunction;
 - (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithRedirectFunction:(IMP)redirectFunction;
 
 @property (nonatomic, unsafe_unretained, readonly) IMP redirectFunction;
 
