@@ -1,0 +1,16 @@
+PODS:
+  - TrampolineHook (0.0.5)
+
+DEPENDENCIES:
+  - TrampolineHook (from `../../`)
+
+EXTERNAL SOURCES:
+  TrampolineHook:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  TrampolineHook: f74f5e6256f1f87acdd0732ec33c2090ce048db9
+
+PODFILE CHECKSUM: ff3c7b28464fc465967e0c109c496182ec835887
+
+COCOAPODS: 1.9.1
