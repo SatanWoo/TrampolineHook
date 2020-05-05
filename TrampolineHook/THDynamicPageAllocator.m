@@ -108,10 +108,10 @@ static THDynamicPage *THCreateDynamicePage()
     THDynamicPage *reusablePage = [[self.dynamicPages lastObject] pointerValue];
     if (!reusablePage || reusablePage->dataPage.nextAvailableIndex == THNumberOfDataPerPage) {
         reusablePage = THCreateDynamicePage();
+        if (!reusablePage) return NULL;
+
         [self.dynamicPages addObject:[NSValue valueWithPointer:reusablePage]];
     }
-    
-    if (!reusablePage) return NULL;
     
     reusablePage->dataPage.redirectFunction = self.redirectFunction;
     return reusablePage;
