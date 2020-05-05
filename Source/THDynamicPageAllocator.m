@@ -92,6 +92,8 @@ static THDynamicPage *THCreateDynamicePage()
     if (!functionAdress) return NULL;
     
     THDynamicPage *dynamicPage = [self fetchCandidiateDynamicPage];
+
+    if (!dynamicPage) return NULL;
     
     int slot = dynamicPage->dataPage.nextAvailableIndex;
     dynamicPage->dataPage.dynamicData[slot].originIMP = (IMP)functionAdress;
@@ -108,6 +110,8 @@ static THDynamicPage *THCreateDynamicePage()
         reusablePage = THCreateDynamicePage();
         [self.dynamicPages addObject:[NSValue valueWithPointer:reusablePage]];
     }
+    
+    if (!reusablePage) return NULL;
     
     reusablePage->dataPage.redirectFunction = self.redirectFunction;
     return reusablePage;
