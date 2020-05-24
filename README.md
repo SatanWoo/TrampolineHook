@@ -23,8 +23,8 @@ void myInterceptor
     // bla bla bla
 }
 
-// Create the global inteceptor with your function
-THInterceptor *interceptor = [THInterceptor sharedInterceptorWithFunction:(IMP)myInterceptor]
+// Create the inteceptor with your interceptor function
+THInterceptor *interceptor = [[THInterceptor alloc] initWithRedirectionFunction:(IMP)myInterceptor];
 ```
 
 2. Intercept any function you want no matter what the method signature it is.
@@ -69,10 +69,12 @@ The usage of MainThreadChecker is quite easy.
 
 ## 4. TODO
 
-- [ ] API Stability. 
-- [ ] Varadic Argument Interceptor.
+- [x] API Stability. 
+- [x] Varadic Argument Interceptor.
 - [ ] More examples.
 - [ ] Performance Benchmark.
+
+You can view the **Project** tab to follow the process of this project.
 
 
 
