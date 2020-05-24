@@ -7,14 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "THPageAllocator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface THDynamicPageAllocator : NSObject
-
-- (instancetype)initWithRedirectFunction:(IMP)redirectFunction;
-- (IMP)allocateDynamicPageForFunction:(IMP)functionAdress;
-
+@interface THSimplePageAllocator : THPageAllocator
 @end
 
 NS_ASSUME_NONNULL_END

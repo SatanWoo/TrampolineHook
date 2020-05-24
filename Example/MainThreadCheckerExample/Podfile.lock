@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  TrampolineHook: f74f5e6256f1f87acdd0732ec33c2090ce048db9
+  TrampolineHook: 8611b14b8d7158822fba5e3ad8b73ddae11b29de
 
 PODFILE CHECKSUM: ff3c7b28464fc465967e0c109c496182ec835887
 

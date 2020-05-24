@@ -87,7 +87,7 @@ static bool MTAddSwizzler(Class cls, SEL selector)
     
     static THInterceptor *interceptor = nil;
     if (!interceptor) {
-        interceptor = [THInterceptor sharedInterceptorWithFunction:(IMP)MTMainThreadChecker];
+        interceptor = [[THInterceptor alloc] initWithRedirectionFunction:(IMP)MTMainThreadChecker];
     }
     
     if (!interceptor) return false;

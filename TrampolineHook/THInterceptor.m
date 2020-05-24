@@ -7,7 +7,8 @@
 //
 
 #import "THInterceptor.h"
-#import "THDynamicPageAllocator.h"
+#import "THSimplePageAllocator.h"
+#import "THVariadicPageAllocator.h"
 
 #define THInterceptorResultFail \
         [[THInterceptorResult alloc] initWithReplacedAddress:NULL state:THInterceptStateFailed]
@@ -27,25 +28,13 @@
 @end
 
 @interface THInterceptor()
-@property (nonatomic, strong) THDynamicPageAllocator *pageAllactor;
+@property (nonatomic, strong) id<THDynamicAllocatable> pageAllactor;
 @property (nonatomic, unsafe_unretained, readwrite) IMP redirectFunction;
 @end
 
 @implementation THInterceptor
 
-+ (THInterceptor *)sharedInterceptorWithFunction:(IMP)redirectFunction
-{
-    NSAssert(redirectFunction != NULL, @"[THInterceptor]::Interceptor must be created with non-null redirect function");
-    
-    static dispatch_once_t onceToken;
-    static THInterceptor *_interceptor;
-    dispatch_once(&onceToken, ^{
-        _interceptor = [[THInterceptor alloc] initWithRedirectFunction:redirectFunction];
-    });
-    return _interceptor;
-}
-
-- (instancetype)initWithRedirectFunction:(IMP)redirectFunction
+- (instancetype)initWithRedirectionFunction:(IMP)redirectFunction
 {
     self = [super init];
     if (self) {
@@ -71,12 +60,36 @@
 
 #pragma mark - Getter
 
-- (THDynamicPageAllocator *)pageAllactor
+- (id<THDynamicAllocatable>)pageAllactor
 {
     if (!_pageAllactor) {
-        _pageAllactor = [[THDynamicPageAllocator alloc] initWithRedirectFunction:self.redirectFunction];
+        Class cls = [[self class] pageAllocatorClass];
+        _pageAllactor =  [[cls alloc] initWithRedirectionFunction:self.redirectFunction];
     }
     return _pageAllactor;
 }
 
++ (Class)pageAllocatorClass
+{
+    return [THSimplePageAllocator class];
+}
+
 @end
+
+
+#pragma mark - THVariadicInterceptor Implementation
+@implementation THVariadicInterceptor
+
+- (instancetype)initWithRedirectionFunction:(IMP)redirectFunction
+{
+    return [super initWithRedirectionFunction:redirectFunction];
+}
+
++ (Class)pageAllocatorClass
+{
+    return [THVariadicPageAllocator class];
+}
+
+
+@end
+

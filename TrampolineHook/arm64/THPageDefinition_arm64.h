@@ -9,8 +9,10 @@
 #ifndef THPageDefinition_arm64_h
 #define THPageDefinition_arm64_h
 
+#import <Foundation/Foundation.h>
+
 typedef int32_t THDynamicPageEntryGroup[2];
-static const int32_t THDynamicPageInstructionCount = 32;
 static const int32_t THPageSize = 0x4000;
+
 
 #endif /* THPageDefinition_arm64_h */

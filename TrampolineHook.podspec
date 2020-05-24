@@ -11,7 +11,12 @@ s.license      = { :type => 'MIT', :file => 'LICENSE' }
 s.author       = { "SatanWoo" => "" }
 s.source       = { :git => "https://github.com/SatanWoo/TrampolineHook.git", :tag => s.version.to_s }
 
-s.source_files = "TrampolineHook/*.{h,m}", "TrampolineHook/arm64/*.{h}", "TrampolineHook/arm64/THPage_arm64.s"
+s.source_files = "TrampolineHook/*.{h,m}", 
+				 "TrampolineHook/PageAllocator/*.{h,m}",
+				 "TrampolineHook/arm64/*.{h,m}", 
+				 "TrampolineHook/arm64/THPage_arm64.s",
+				 "TrampolineHook/arm64/THPageVar_arm64.s"
+
 s.public_header_files = "Trampoline/THInterceptor.h"
 s.static_framework = true
 
